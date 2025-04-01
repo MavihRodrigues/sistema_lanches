@@ -20,7 +20,7 @@ class Create extends Component
         'nome' => 'required|min:3|max:255',
         'endereco' => 'required|min:4|max:255',
         'telefone' => 'required|min:13|max:13',
-        'cpf' => 'required|min:20|max:20|unique',
+        'cpf' => 'required|min:20|max:20|unique:clientes',
         'email' => 'required|email|min:6|max:255',
         'password' => 'required|min:6|max:255',
     ];
@@ -56,6 +56,7 @@ class Create extends Component
 
     public function store()
     {
+        $this->validate();
         $user = User::create([
             'name' => $this->nome,
             'email' => $this->email,
