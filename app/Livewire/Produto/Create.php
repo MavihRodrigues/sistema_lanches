@@ -11,7 +11,7 @@ class Create extends Component
     public $nome;
     public $ingredientes;
     public $valor;
-
+    
     protected $rules = [
         'nome' => 'required|max:255',
         'ingredientes' => 'required|max:255',
